@@ -22,3 +22,72 @@ function whatShallIWear (temp) {
 whatShallIWear (50);
 whatShallIWear (80);    
 whatShallIWear (60);
+
+function doIt(param) {
+    param = 2;
+   }
+   var test = 1;
+   doIt(test);
+   console.log(test);
+
+// функция расчета площади круга по заданному радиусу
+
+function calculateArea (r) { // 3й шаг - аргумент передается в функцию
+var area; //4й шаг - вводится переменная, которая будет выводить результат. Начинает выполняться функция
+if (r<=0) { return 0; //5-6 шаг - проверка нулевых значений и возврат результата 
+}
+else {area=Math.PI*r*r; //7 шаг - расчет в случае положительных значений
+return area; // 8 шаг - функция возвращает численное значение и выполнение прекращается 
+}
+}
+var radius=5.4; // 1 шаг - задается значечени радиуса (аргумент для параметра r в функции)
+var theArea = calculateArea(radius); //2 шаг - значение радиуса передается функции 
+//9 шаг - результат работы функции присваивается новой переменной theArea. 
+console.log ("The area is: " + theArea); //10 шаг - вывод результата в консоль
+
+// массивы
+
+var products = ["Choo Choo Chocolate", "Icy Mint", "Cake Batter", "Bubblegum"];
+var last = products[products.length-1];
+var recent = products[last];
+console.log(recent);
+
+// упражнение - отчет
+var scores = [60, 50, 60, 58, 54, 54,
+    58, 50, 52, 54, 48, 69,
+    34, 55, 51, 52, 44, 51,
+    69, 64, 66, 55, 52, 61,
+    46, 31, 57, 52, 44, 18,
+    41, 53, 55, 61, 51, 44];
+var i=0;
+var output;
+while (i<scores.length) 
+{ output=("Bubble solution #"+ i + "score" + scores[i]);
+colsole.log(output);
+i=i+1;
+}
+
+//console.log("Bubble tests: " + scores.length);
+//function higestScore()
+
+
+//var maxScore=higestScore();
+//console.log("Highest bubble score" + maxScore) // 
+
+
+// проверка в каких сортах есть жевательная резинка
+
+var products = ["Choo Choo Chocolate",
+"Icy Mint", "Cake Batter",
+"Bubblegum"];
+var i = 0;
+var hasBubbleGum = [false,
+    false,
+    false,
+    true];
+
+while (i < hasBubbleGum.length) {
+    if (hasBubbleGum[i])
+    console.log(products[i] + " contains bubble gum");
+    i = i + 1;
+}
