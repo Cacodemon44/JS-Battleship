@@ -63,19 +63,11 @@ var i=0;
 var output;
 while (i<scores.length) 
 { output=("Bubble solution #"+ i + "score" + scores[i]);
-colsole.log(output);
+console.log(output);
 i=i+1;
 }
 
-//console.log("Bubble tests: " + scores.length);
-//function higestScore()
 
-
-//var maxScore=higestScore();
-//console.log("Highest bubble score" + maxScore) // 
-
-
-// проверка в каких сортах есть жевательная резинка
 
 var products = ["Choo Choo Chocolate",
 "Icy Mint", "Cake Batter",
@@ -87,7 +79,23 @@ var hasBubbleGum = [false,
     true];
 
 while (i < hasBubbleGum.length) {
-    if (hasBubbleGum[i])
+    if (hasBubbleGum[i]) {
     console.log(products[i] + " contains bubble gum");
-    i = i + 1;
 }
+    i = i + 1; // !! цикл продолжается после закрытой фигурной скобки тела функции, а не внутри ее!
+}
+
+// проверка в каких сортах есть жевательная резинка ВЕРСИЯ 2 через FOR 
+var products = ["Choo Choo Chocolate",
+"Icy Mint", "Cake Batter",
+"Bubblegum"];
+var hasBubbleGum = [false,
+    false,
+    false,
+    true];
+
+for (var i=0; i < hasBubbleGum.length; i = i + 1) {
+    if (hasBubbleGum[i])
+        console.log(products[i] + " contains bubble gum");
+}
+   

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>  
+        <meta charset="utf-8">
+        <title>Bubbles report</title>
+    </head>
+    <script>
+var scores = [60, 50, 60, 58, 54, 54,
+    58, 50, 52, 54, 48, 69,
+    34, 55, 51, 52, 44, 51,
+    69, 64, 66, 55, 52, 61,
+    46, 31, 57, 52, 44, 18,
+    41, 53, 55, 61, 51, 44];
+function printAndGetHighScore(scores) { // вместо глобальной переменной scores функция использует параметр scores;
+var highScore=0;
+var output;
+for (var i=0; i<scores.length; i++) 
+{ output=("Bubble solution #"+ i + "score" + scores[i]); 
+console.log(output);
+// определение максимального значения в массиве
+if (scores[i] > highScore) {
+highScore = scores[i];
+}   
+}
+return highScore; //заканчивает работу функции и возвращает в точку вызову
+}
+var highScore = printAndGetHighScore(scores); // передача атрибута в функцию и возаращение значения переменной highscore.
+console.log("Bubbles tests: " + scores.length);
+console.log("Highest bubble score: " + highScore);
+
+// поиск в массиве значений, совпадающих в максимальным
+var bestSolutions = [];
+for (var i=0; i<scores.length; i++) 
+{
+    if (scores[i]==highScore) {
+    bestSolutions.push(i);
+    }
+}
+console.log("Solutions with the highest score: " + bestSolutions);
+
+function getMostCostEffectiveSolution(scores, costs, highscore) { 
+var cost =100;
+var index;
+for (var i=0; i<scores.length; i++) {
+    if (scores[i]==highScore) {
+    if (cost > costs[i]>) { // сравнивается с наибольшим числом
+    index=i;
+    cost=costs[i]; // если наибольшее число больше, тогда ему присваивается новое значение (наименьшее)
+}
+}
+}
+return index;
+}
+var mostCostEffective = getMostCostEffectiveSolution(scores, costs, highScore);
+console.log("Bubble Solution #" + mostCostEffective + " is the most cost effective");
+
+/* поиск в массиве значений, совпадающих в максимальным без push
+var bestSolutions = [];
+var k=0;
+for (var i=0; i<scores.length; i++) 
+{
+    if (scores[i]==highScore) {
+    bestSolutions[k]=[i];
+    k++
+    }
+}
+console.log("Solutions with the highest score: " + bestSolutions);
+*/
+//=============================================================
+//===========================================================
+// проводим рефакотринг кода - добавляем функцию для передаи результаттов массива
+    
+    </script>
+    </html>
