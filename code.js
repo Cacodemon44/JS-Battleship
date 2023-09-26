@@ -98,4 +98,13 @@ for (var i=0; i < hasBubbleGum.length; i = i + 1) {
     if (hasBubbleGum[i])
         console.log(products[i] + " contains bubble gum");
 }
-   
+
+const dogs = {
+    Fido: "Mutt",
+    Hunter: "Doberman",
+    Snoopie: "Beagle"
+  };
+  
+  const myDog = dogs.Hunter;
+  const myBreed = dogs[myDog];
+  console.log(myDog);
