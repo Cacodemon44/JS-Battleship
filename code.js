@@ -99,12 +99,16 @@ for (var i=0; i < hasBubbleGum.length; i = i + 1) {
         console.log(products[i] + " contains bubble gum");
 }
 
-const dogs = {
-    Fido: "Mutt",
-    Hunter: "Doberman",
-    Snoopie: "Beagle"
+// ДРУГОЙ ВАРИАНТ ДОСТУПА К СВОЙСТВАМ ОБЪЕКТА
+// Another use of bracket notation on objects is to access a property which is stored as the value of a variable.
+// This can be very useful for iterating through an object's properties or when accessing a lookup table.
+const testObj = {
+    12: "Namath",
+    16: "Montana",
+    19: "Unitas"
   };
   
-  const myDog = dogs.Hunter;
-  const myBreed = dogs[myDog];
-  console.log(myDog);
+  
+  const playerNumber = 16;  
+  const player = testObj[playerNumber]; // будет искать в массиве переменную с именем 16 и присвоит ее значение player
+  console.log(player);  // выведет присвоенное значение 
