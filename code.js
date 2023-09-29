@@ -112,3 +112,38 @@ const testObj = {
   const playerNumber = 16;  
   const player = testObj[playerNumber]; // будет искать в массиве переменную с именем 16 и присвоит ее значение player
   console.log(player);  // выведет присвоенное значение 
+
+  function countSheeps(sheep) {
+    let sum=0;
+      for (i=0;i<sheep.length;i++)
+      { 
+        if (sheep[i]!==null || sheep[i]!==undefined) 
+        {
+          sum=sum+1;
+                  } 
+                }
+                console.log(sum);
+        return sum;
+          }
+         
+  let sh=[1,2,,,3];
+  countSheeps(sh);
+
+  function countPositivesSumNegatives(input) {
+    let PosSum=0;
+      let NegSum=0;
+      let newArray= [];
+      //   if (input.length!==0 || input!==null) 
+           for (i=0;i<input.length;i++)
+        { if (input[i]>0) {PosSum=PosSum+input[i];}
+                      else if (input[i]<0) {NegSum=NegSum+input[i];}
+      }  
+            newArray.push[PosSum];
+            newArray.push[NegSum];
+           console.log(newArray);
+           return newArray;
+       
+              }
+             // else
+    // return [];
+//  }
