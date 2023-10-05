@@ -128,22 +128,103 @@ const testObj = {
          
   let sh=[1,2,,,3];
   countSheeps(sh);
+/*
+eturn an array, where the first element is the count of positives numbers and the second element is sum of negative numbers. 0 is neither positive nor negative.
 
+If the input is an empty array or is null, return an empty array.
+*/
   function countPositivesSumNegatives(input) {
-    let PosSum=0;
-      let NegSum=0;
-      let newArray= [];
-      //   if (input.length!==0 || input!==null) 
-           for (i=0;i<input.length;i++)
-        { if (input[i]>0) {PosSum=PosSum+input[i];}
-                      else if (input[i]<0) {NegSum=NegSum+input[i];}
-      }  
-            newArray.push[PosSum];
-            newArray.push[NegSum];
-           console.log(newArray);
-           return newArray;
-       
-              }
-             // else
-    // return [];
-//  }
+    if (input === null || input.length === 0) { // сначала проверяется базовое условие - не равно ли null или пустому массиву
+      return []; 
+    }
+    let posCount = 0;
+    let negSum = 0;
+    for (let i = 0; i < input.length; i++) {
+       if (input[i] > 0) {
+        posCount++;
+      } else {
+        negSum += input[i];
+      }
+    }
+    return [posCount, negSum];
+  }
+  let input=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15];
+                     countPositivesSumNegatives(input);
+
+function greet(name){
+                        return ("Hello, ") + name ("how are you doing today?");
+                      }
+ function maps(x) {
+                        let newArr=[];
+                          for (i=0;i<x.length;i++) {
+                            newArr[i]=x[i]*x[i];                  
+                          }
+                          console.log(newArr);
+                          return newArr;
+                        }            
+                        maps([1,2,3]);
+
+  //получение первого символа строки и преобразование его в число
+  function getAge(inputString){
+    return number(inputString[0]);
+    }
+// функция includes  проверяет наличие элемента в массиве. Если он есть возвращает true. Если нет false.
+// сокращенный вариант написания true false!
+    function check(a, x) {
+        console.log(a.includes(x));
+        return a.includes(x)
+        }
+    check([1,2],0);
+
+    function century(year) {
+        let a=String(year)
+        if (a[2]+a[3]=="00") 
+        {console.log(a[0]+a[1]); 
+        return a}
+        else {
+        console.log(Number(a[0]+a[1])+1);
+        return Number(a[0]+a[1])+1; }
+      }
+      century(1901);
+//* given a string of words, return the length of the shortest word(s).
+      function findShort(s){
+        let arrayOfStrings = s.split(" ");
+        let newArray=[];
+        for(let i = 0; i < arrayOfStrings.length; i++)
+          newArray[i]=arrayOfStrings[i].length; // присвоение новому массиву длины строк предыдущего
+           newArray.sort((a, b) => a - b); // сортировка по возрастанию чисел в новом массиве
+                       
+return newArray[0]
+ }
+      findShort("asd ee d");
+//* given a string of words, return the length of the shortest word(s).Версия 2. 
+      function findShort(s){
+        var arr = s.split(' ');
+        var min = arr[0].length;
+        for (var i = 1; i < arr.length; i++) {
+          if (arr[i].length < min) {
+            min = arr[i].length;
+          }
+        }
+        return min
+      }
+
+      // записать строку в обратном порядке
+
+      function solution(str){
+        return str.split("").reverse().join(""); // split - разделяет на массив, reverse - переворачиывает join - снова делает массив 
+      }
+
+
+      function getMiddle(s)
+      {
+        let arrLetters=s.split();
+        let i=arrLetters.length/2;
+        if (arrLetters.length % 2==0) {
+          console.log (arrLetters[i]+arrLetters[i+1]);
+           return arrLetters[i]+arrLetters[i+1];}
+        else
+          {return arrLetters[Math.ceil(i)];}
+        
+      }
+      getMiddle(qwerty);
