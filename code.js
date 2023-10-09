@@ -218,13 +218,42 @@ return newArray[0]
 
       function getMiddle(s)
       {
-        let arrLetters=s.split();
+        let arrLetters=s.split("");
+        console.log(arrLetters);
         let i=arrLetters.length/2;
         if (arrLetters.length % 2==0) {
-          console.log (arrLetters[i]+arrLetters[i+1]);
+          console.log (arrLetters[i-1]+arrLetters[i]);
            return arrLetters[i]+arrLetters[i+1];}
         else
-          {return arrLetters[Math.ceil(i)];}
+        console.log (arrLetters[Math.ceil(i-1)]);
+          {return arrLetters[Math.ceil(i-1)];}
         
       }
-      getMiddle(qwerty);
+      getMiddle("qwertye");
+// более элегантное решение - через slice. 
+      function getMiddle(s)
+{
+  return s.slice((s.length-1)/2, s.length/2+1);
+}
+
+function positiveSum(arr) {
+  let sum=0;
+  for (let i=0; i<arr.length; i++) 
+    if (arr[i]<0) sum=sum+arr[i];
+    return sum
+}
+
+function repeatStr (n, s) {
+  for (let i=1;i<n;i++) {s++} 
+  return s;
+}
+// удалить все пробелы из строки и вывести строку без пробелов
+function noSpace(x){
+  return  x.split(" ").join("")
+  }
+
+// версия 2
+
+function noSpace(x) {
+  return x.replaceAll(' ', ''); // replaceAll - все пробелы
+}
